@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="row">
+        <h1 class= "col-sm-2">Chefs</h1>
+        <h1 class = "col-sm-1">|</h1>
+        <h1><a class = " col-sm-4" href ="dishes">Dishes</a></h1>
+        <a href="new">Add a Chef</a>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nmae</th>
+                <th>Birthday</th>
+                <th># of dishes</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(Chef chef in ViewBag.Chefs)
+            {
+            <tr>
+                <td>@chef.FirstName @chef.LastName</td>
+                <td>@chef.Birthday</td>
+                <td>@chef.CreatedDishes.Count() </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
